@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+* {
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-family: "Lacquer", system-ui;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-image: url(a.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 1080px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    max-width: 2520px;
+    height: 75px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul a {
+    background-color: #332c2b;
+    color: white;
+    border: 1px solid #503935;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+header nav ul a:hover,
+header nav ul a:active {
+    background-color: #a54737;
+    color: white;
+}
+
+.main {
+    width: 90%;
+    max-width: 330px;
+    margin: 125px auto 0;
+    padding: 20px;
+    box-shadow: 5px 2px 20px 4px grey;
+    border-radius: 20px;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+p {
+    font-family: "Lacquer", system-ui;
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: "Lacquer", system-ui;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.email,
+.password,
+.cpf,
+.birthday,
+.button{
+    width: calc(100% - 22px);
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .main {
+        margin: 100px auto;
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.9em;
+    }
+}

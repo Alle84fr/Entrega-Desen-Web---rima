@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+* {
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-family: "Lacquer", system-ui;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-image: url(a.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content; /* Garante que a altura do body seja 100% da altura da janela */
+    margin: 0;
+    
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    height: 75px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul a {
+    background-color: #332c2b;
+    color: white;
+    border: 1px solid #503935;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+header nav ul a:hover,
+header nav ul a:active {
+    background-color: #a54737;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .content {
+        margin: 100px auto;
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .content {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content img {
+    max-width: 700px;
+    max-height: 550px;
+    float: left;
+
+}
+
+.content p,
+.content b {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+.content a
+ {
+    background-color: #332c2b;
+    color: white;
+    border: 1px solid #503935;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.content a:hover
+.content a:active{
+    background-color: #a54737;
+    color: white;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: justify;
+    width: 90%;
+    padding: 50px;
+    max-width: 1000px;
+    box-shadow: 5px 2px 20px 4px grey;
+    border-radius: 20px;
+    background-color: aliceblue;
+    text-align: justify;
+    margin: 0; /* Remove a margem extra para centralizar */
+    height: auto;
+    gap: 20px;
+    min-height: 60vh;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.quote {
+    font-style: italic;
+    text-align: center;
+    margin: 30px 0;
+    font-size: 20px;
+}
+.highlight {
+    color: #a54737;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+}
