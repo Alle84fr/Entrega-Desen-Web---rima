@@ -25,7 +25,7 @@ header h1 a:hover {
 }
 
 body {
-    background-image: url(b2.png);
+    background-image: url(../Image/b2.png);
     background-repeat: no-repeat;    
     background-size: cover;
     max-height: 1080px;
