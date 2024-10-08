@@ -36,20 +36,15 @@ async function login() {
 
             localStorage.setItem('accessToken', resposta.access_token);
 
-            window.location.href = "Main.html";
+            window.location.href = "poslogin.html";
             return;
         }
 
         let respostaErro = await api.json();
 
-        if (respostaErro?.data?.errors === "Usuário não está ativo") {
-            alert("Erro: Usuário não está ativo.");
-        } else if (respostaErro?.data?.errors === "Usuário não foi encontrado") {
-            alert("Erro: Usuário não foi encontrado.");
-        } else {
-            alert("Erro desconhecido. Tente novamente.");
+        if (respostaErro?.data) {
+            alert(respostaErro.data.errors);
         }
-
     } catch (error) {
         console.error("Erro na requisição:", error);
         alert("Ocorreu um erro. Tente novamente mais tarde.");

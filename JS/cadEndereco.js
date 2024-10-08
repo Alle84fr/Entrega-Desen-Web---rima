@@ -18,7 +18,7 @@ async function cadastrarEndereco() {
 
     if (!accessToken) {
         alert("Erro: Usuário não autenticado. Faça o login novamente.");
-        window.location.href = "Login.html";
+        window.location.href = "poslogin.html";
         return;
     }
 
