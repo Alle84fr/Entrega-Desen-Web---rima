@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <script src="../JS/cadEndereco.js"></script>
+    <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../CSS/cadEndereco.css"/>
+    <script src="JS/cadEndereco.js"></script>
+    
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="HTML/cadEndereco.html">Vozes Da Margem</a></h1>   
+        <nav>
+            <ul>                                           
+                <a href="Main.html">
+                    <li>Voltar</li>
+                </a>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="main">
+
+        <h2>Cadastro Endereço</h2>
+        
+        <form action="" name="Formulario" method="post">
+
+            <label for="title">Tipo de Local: </label>
+            <input type="title" name="title" id="title" class="title" placeholder="Digite o tipo de local: " required/>
+            
+            <label for="cep">Cep: </label>
+            <input type="cep" name="cep" id="cep" class="cep" placeholder="Digite seu Cep: " required/>
+
+            <label for="address">Endereço: </label>
+            <input type="address" name="address" id="address" class="adress" placeholder="Digite seu endereço" required/>
+
+            <label for="number">Numero: </label>
+            <input type="number" name="number" id="number" class="number" placeholder="Digite o número"required/>
+
+            <label for="complement">Complemento: </label>
+            <input type="complement" name="complement" id="complement" class="complement" placeholder="Digite o Complemento" required/>
+
+            <label for="terms">Aceito termos e condições: </label>
+            <input type="checkbox" name="terms" id="terms" class="terms" required />
+            
+            <div id="outer">
+                <div class="inner">
+                    <input type="button" value="salvar" onclick="cadastro()" class="button" id="Button">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -4,6 +4,9 @@ async function login() {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
+    /*caminho tentativa*/
+    window.location.href = "../HTML/home.html";
+
     
     if (email === "" || password === "") {
         alert("Por favor, preencha todos os campos.");
@@ -36,7 +39,7 @@ async function login() {
 
             localStorage.setItem('accessToken', resposta.access_token);
 
-            window.location.href = "poslogin.html";
+            window.location.href = "../CSS/home.css";
             return;
         }
 
@@ -50,3 +53,5 @@ async function login() {
         alert("Ocorreu um erro. Tente novamente mais tarde.");
     }
 }
+
+

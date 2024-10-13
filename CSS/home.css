@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+* {
+       font-optical-sizing: auto;
+       font-style: normal;
+       font-variation-settings: "wdth" 130;
+       font-family: "Lacquer", system-ui;
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+   }
+
+body{
+       background-image: url(../Image/a.jpg);
+       background-repeat: no-repeat;
+       background-size: cover;
+       max-height: 100%;   
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*linhas do titulo cor mais escura*/
+header {
+       position: fixed;
+       width: 100%;
+       max-width: 2520px;
+       height: 75px;
+       padding: 10px 20px;
+       background: rgba(5, 0, 0, 0.5);
+       color: #fff;
+       top: 0;
+       left: 0;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+}
+
+
+
+header nav ul {
+       display: flex;
+       flex-wrap: wrap;
+       list-style-type: none;
+       padding: 0;
+       margin: 0;
+}
+
+header nav ul a {
+       background-color: #332c2b;
+       color: white;
+       border: 1px solid #503935;
+       padding: 15px 20px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+   }
+
+header nav ul a:hover,
+header nav ul a:active {
+       background-color: #a54737;
+       color: white;
+}
+   
