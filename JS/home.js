@@ -8,7 +8,7 @@ if (endereco) {
         <p>Número: ${endereco.number}</p>
         <p>Complemento: ${endereco.complement}</p>
         <br>
-    `;
+`;
 } else {
     document.getElementById('endereco').innerText = "Nenhum endereço cadastrado.";
 }

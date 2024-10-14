@@ -1,62 +1,63 @@
 <!DOCTYPE html>
-<html lang="Pt-Br">
+<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
-    <title>Login</title>
-    <link rel="stylesheet" href="../CSS/Login.css">
-    
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
+        <title>Login</title>
+        <link rel="stylesheet" href="../CSS/Login.css">
+        <script src="../JS/Login.js"></script>
 
-<body>
+    </head>
 
-    <header>
-        <h1><a href="Main.html">Vozes Da Margem</a></h1>
-        <nav>
-            <ul>
-                <a href="Main.html">
-                    <li>Home</li>
-                </a>
-                <a href="Sobre.html">
-                    <li>Sobre</li>
-                </a>
-                <a href="cadastro.html">
-                    <li>cadastro</li>
-                </a>
-            </ul>
-        </nav>
-    </header>
-    <div class="main">
+    <body>
 
-        <h2>Login</h2>
-        <p>Entre e veja mais sobre o hip-hop</p>
+        <header>
+            <h1><a href="Main.html">Vozes Da Margem</a></h1>
+            <nav>
+                <ul>
+                    <a href="Main.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="Sobre.html">
+                        <li>Sobre</li>
+                    </a>
+                    <a href="cadastro.html">
+                        <li>cadastro</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        <div class="main">
 
-        <form action="" name="Formulario" method="post">
-            <label for="email">Email: </label>
-            <input type="email" name="email" id="email" class="email" placeholder="Digite o seu email: "/>
-            <label> for="password">Senha: </label>
-            <input type="password" name="password" id="password" class="password" placeholder="Crie uma senha: (Minimo 8 digitos) " /><div id="outer">
-             
-                <div class="outter">
-                    <div class="inner">
-                        <input type="button" value="salvar" onclick="login()" class="button">
+            <h2>Login</h2>
+            <p>Entre e veja mais sobre o hip-hop</p>
+
+            <form action="" name="Formulario" method="post">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" class="email" placeholder="Digite o seu email: "/>
+                <label> for="password">Senha: </label>
+                <input type="password" name="password" id="password" class="password" placeholder="Crie uma senha: (Minimo 8 digitos) " /><div id="outer">
+                
+                    <div class="outter">
+                        <div class="inner">
+                            <input type="button" value="salvar" onclick="login()" class="button">
+                        </div>
+                        <div class="inner">
+                            <button class="mano" value="reset" type="reset"><a href="cadastro.html">Não tem uma conta? crie já</a></button>
+                        </div>
                     </div>
-                    <div class="inner">
-                        <button class="mano" value="reset" type="reset"><a href="cadastro.html">Não tem uma conta? crie já</a></button>
-                    </div>
-                </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
 
 
 
 
-<!--caminho tentativa-->
-<script src="../HTML/home.html"></script>
+        <!--caminho tentativa-->
+        <script src="../HTML/home.html"></script>
 
 
-</body>
+    </body>
 </html>
