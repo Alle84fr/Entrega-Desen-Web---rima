@@ -83,13 +83,14 @@ header nav ul a:active {
     border-radius: 20px;
     background-color: aliceblue;
     text-align: center;
+   
 }
 
-p {
-    font-family: "Lacquer", system-ui;
-    font-size: 1em;
-    font-weight: 400;
-    margin-bottom: 10px;
+
+/*selec*/
+label {
+    display: block; 
+    margin-bottom: 5px; 
 }
 
 h2 {
@@ -98,19 +99,23 @@ h2 {
     margin-bottom: 10px;
 }
 
-.email,
-.password,
-.cpf,
-.birthday,
-.button,
+
+.title,
+.cep,
+.address,
+.number,
+.complement,
 .name{
     width: calc(100% - 22px);
     max-width: 300px;
     padding: 10px;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 10px;
+
 }
+
+
 
 @media (max-width: 1200px) {
     header {

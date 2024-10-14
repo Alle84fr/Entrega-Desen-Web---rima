@@ -1,6 +1,9 @@
 const url = "https://go-wash-api.onrender.com/api/auth/address";
 
+
 async function cadastrarEndereco() {
+
+
     let title = document.getElementById('title').value;
     let cep = document.getElementById('cep').value;
     let address = document.getElementById('address').value;
@@ -8,8 +11,8 @@ async function cadastrarEndereco() {
     let complement = document.getElementById('complement').value;
 
 
-    if (title === "" || cep === "" || address === "" || number === "") {
-        alert("Por favor, preencha todos os campos obrigatórios.");
+     if (!title === "" || !cep === "" || !address === "" || !number === "") {
+        alert("Preencher todos os campos!");
         return;
     }
 
@@ -41,7 +44,7 @@ async function cadastrarEndereco() {
         if (api.ok) {
             let resposta = await api.json();
             console.log('Endereço cadastrado com sucesso!', resposta);
-            window.location.href = "Home.html";
+            window.location.href = "../HTML/home.html";
             return;
         }
 
@@ -49,8 +52,22 @@ async function cadastrarEndereco() {
 
         alert("Erro ao cadastrar endereço: " + (respostaErro?.data?.errors || "Erro desconhecido"));
 
+            /**/
+        if(!/^\d{5}-?\d{3}$/.test(cep)) {
+            alert("Error: Cep deve ser no formato xxxxx-xxx");
+            return;
+        }
+
+
     } catch (error) {
         console.error("Erro na requisição:", error);
         alert("Ocorreu um erro. Tente novamente mais tarde.");
     }
+
+        /**/
+    cont endereco = {title, cep, address, number, complement};
+    localStorage.setItem('endereco', JSON.stringify(endereco));
+
+       /**/
+    window.location.href = "../HTML/home.html";
 }

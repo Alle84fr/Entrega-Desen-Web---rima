@@ -24,7 +24,7 @@ header h1 a {
     color: #fff;
 }
 
-/*linhas do titulo cor mais escura*/
+
 header {
        position: fixed;
        width: 100%;
@@ -65,4 +65,4 @@ header nav ul a:active {
        background-color: #a54737;
        color: white;
 }
-   
+
