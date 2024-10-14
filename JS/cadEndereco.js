@@ -36,7 +36,7 @@ async function cadastrarEndereco() {
     }
 
     try {
-        const api = await fetch(url, {
+        const api = await fetch("https://go-wash-api.onrender.com/api/login", {
         method: "POST",
         body: JSON.stringify({
             "title": title,
