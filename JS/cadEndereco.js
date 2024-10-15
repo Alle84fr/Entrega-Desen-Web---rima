@@ -1,4 +1,4 @@
-
+curl --location 'https://go-wash-api.onrender.com/api/auth/address';
 
 async function cadastrarEndereco() {
 
@@ -35,30 +35,31 @@ async function cadastrarEndereco() {
         return;
     }
 
-    try {
-        const api = await fetch("https://go-wash-api.onrender.com/api/login", {
-        method: "POST",
-        body: JSON.stringify({
-            "title": title,
-            "cep": cep,
-            "address": address,
-            "number": number,
-            "complement": complement
-        }),
+        try {
+            const api = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify({
+                "title": title,
+                "cep": cep,
+                "address": address,
+                "number": number,
+                "complement": complement
+            }),
 
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`
-        }
-    });
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${accessToken}`,
+                'Cookie': 'gowash_session=0hGqRHf0q38ETNgEcJGce30LcPtuPKo48uKtb7Oj'
+            }
+        });
     
-     if (api.ok) {
-        const resposta = await api.json();
-        console.log('Endereço cadastrado com sucesso!', resposta);
-        const endereco = {title, cep, address, number, complement};
-        localStorage.setItem('endereco', JSON.stringify(endereco));
-        alert("Endereço cadastrado com sucesso!");
-        window.location.href = "../HTML/home.html";
+        if (api.ok) {
+            const resposta = await api.json();
+            console.log('Endereço cadastrado com sucesso!', resposta);
+            const endereco = {title, cep, address, number, complement};
+            localStorage.setItem('endereco', JSON.stringify(endereco));
+            alert("Endereço cadastrado com sucesso!");
+            window.location.href = "../HTML/home.html";
 
         } else {
             const respostaErro = await api.json();
