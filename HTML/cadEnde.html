@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="br-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Cad Endereço</title>
+
+    <link rel="stylesheet" type ="text/CSS" href="../CSS/cadEndereco.css">
+    <link rel="shortcut icon" type ="image/x-icon" href="../Image/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <h1><a href="HTML/cadEndereco.html">Vozes Da Margem</a></h1>   
+        <nav>
+            <ul>                                           
+                <a href="Main.html">
+                    <li>Voltar</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="main">
+        <h2>Cadastro Endereço</h2>
+        <form action="" name="Formulario" method="post">
+
+        <label for="title">Tipo de Local: </label>
+        <select name="title" id="title" class="title" required>
+        <option value="">Selecione o tipo</option>
+        <option value="casa">Minha Casa</option>
+        <option value="trabalho">Meu Serviço</option>
+        <option value="outros">Outro tipo </option>
+        </select>
+                        
+        <label for="cep">Cep: </label>
+        <input type="text" name="cep" id="cep" class="cep" placeholder="Digite seu Cep: " required/>
+            
+        <label for="address">Endereço: </label>
+        <input type="text" name="address" id="address" class="address" placeholder="Digite seu endereço:" required/>
+            
+        <label for="number">Numero: </label>
+        <input type="number" name="number" id="number" class="number" placeholder="Digite o número:"required/>
+            
+        <label for="complement">Complemento: </label>
+        <input type="text" name="complement" id="complement" class="complement" placeholder="Digite o Complemento:" required/>
+            
+                       
+        <div id="outer">
+            <div class="inner">
+                <input type="button" value="salvar" onclick="cadEndereco()" class="button" id="Button"/>
+            </div>
+        </div>
+    </form>
+    </div>
+            
+    <script src="../JS\cadEnde.js"></script>
+          
+</body>
+</html>
