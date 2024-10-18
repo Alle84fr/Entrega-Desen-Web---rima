@@ -1,58 +1,45 @@
-const url: 'https://go-wash-api.onrender.com/api/auth/addreess'
-
-async function cadEndereco(){
-
-    const lista = {
-        title: document.getElementById("title").value,
-        cep: document.getElementById("cep").value,
-        address: document.getElementById("address").value,
-        number: document.getElementById("number").value,
-        complement: document.getElementById("complement").value
-    }
-
-    if(!lista.title || !lista.cep || !lista.address || !lista.number ) {
-        console.error("Campo do formulário vazio");
-        alert("Preencher todos os campos");
+const url = "https://go-wash-api.onrender.com/api/auth/address";
+async function cadastrarEndereco() {
+    let title = document.getElementById('title').value;
+    let cep = document.getElementById('cep').value;
+    let address = document.getElementById('address').value;
+    let number = document.getElementById('number').value;
+    let complement = document.getElementById('complement').value;
+    if (title === "" || cep === "" || address === "" || number === "") {
+        alert("Por favor, preencha todos os campos obrigatórios.");
         return;
     }
-
-    if(!/^\d{8}$/.test(lista.cep)){
-        alert("CEP deve ter 8 digitios");
+    let accessToken = localStorage.getItem('accessToken');
+    if (!accessToken) {
+        alert("Erro: Usuário não autenticado. Faça o login novamente.");
+        window.location.href = "Login.html";
         return;
     }
-
     try {
         let api = await fetch(url, {
             method: "POST",
-            body: JSON.stringify(lista),
+            body: JSON.stringify({
+                "title": title,
+                "cep": cep,
+                "address": address,
+                "number": number,
+                "complement": complement
+            }),
             headers: {
-                "Content-Type":"application/json"
-            }    
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${accessToken}`
+            }
         });
-
-        if (!accessToken) {
-            alert("Erro: Usuário não autenticado. Faça o login novamente.");
-            window.location.href = "poslogin.html";
+        if (api.ok) {
+            let resposta = await api.json();
+            console.log('Endereço cadastrado com sucesso!', resposta);
+            window.location.href = "Home.html";
             return;
         }
-
-        if(!api.ok) {
-            let respostaErro = await api.json();
-            console.log(respostaErro);
-            alert(respostaErro.mensage || "Erro ao cadastrar endereço")
-            localStorage.setItem("endereco", JSON.stringify(lista));  
-            return;
-
-        } 
-            
-        let resposta = await api.json();
-            console.log(resposta)
-            alert("Endereço cadastrado com sucesso");
-            window.location.href = "../HTML/home.html";
-
+        let respostaErro = await api.json();
+        alert("Erro ao cadastrar endereço: " + (respostaErro?.data?.errors || "Erro desconhecido"));
     } catch (error) {
-        console.error("Erro ao cadastrar endereço", error);
-        alert("Erro ao cadastrar endereço");
-        localStorage.setItem("endereco", JSON.stringify(lista))
+        console.error("Erro na requisição:", error);
+        alert("Ocorreu um erro. Tente novamente mais tarde.");
     }
 }
