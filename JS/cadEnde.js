@@ -33,7 +33,7 @@ async function cadastrarEndereco() {
         if (api.ok) {
             let resposta = await api.json();
             console.log('Endereço cadastrado com sucesso!', resposta);
-            window.location.href = "Home.html";
+            window.location.href = "listaEndereco.html";
             return;
         }
         let respostaErro = await api.json();
