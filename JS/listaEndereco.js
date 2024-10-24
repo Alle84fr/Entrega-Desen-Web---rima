@@ -13,7 +13,8 @@ async function listarEndereco() {
     fetch("https://go-wash-api.onrender.com/api/auth/address")
     method:"GET",
     headers: {
-        "Authorization";  `Bearer ${acessToken}`
+        
+        'Authorization': `Bearer ${accessToken}`
 
     }
 })
