@@ -1,13 +1,19 @@
 
 async function listarEndereco() {
 
+    let accessToken = localStorage.getItem('accessToken');
+    if (!accessToken) {
+        alert("Erro: Usuário não autenticado. Faça o login novamente.");
+        window.location.href = "Login.html";
+        return;
+    }
     try{
 
     const responde = await 
     fetch("https://go-wash-api.onrender.com/api/auth/address")
     method:"GET",
     headers: {
-        "Authorization"; " Bearer $acessToken' 
+        "Authorization"; " Bearer ${acessToken}' 
 
     }
 })
