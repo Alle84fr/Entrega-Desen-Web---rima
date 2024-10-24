@@ -28,9 +28,9 @@ async function listarEndereco() {
 }
 
 function preencherTabela(enderecos) {
-    const tabela = document.querySelector("#tabela-enderecos"); // Certifique-se de que a tabela tem esse ID
+    const tabela = document.querySelector("#tabela-enderecos");
 
-    tabela.innerHTML = ""; // Limpa a tabela antes de preencher
+    tabela.innerHTML = "";
 
     enderecos.forEach(endereco => {
         const row = document.createElement("tr");
