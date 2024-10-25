@@ -12,7 +12,7 @@ async function listarEndereco() {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${accessToken}` // O mesmo token usado no curl
+                'Authorization': `Bearer ${accessToken}`
             }
         });
 
@@ -21,26 +21,25 @@ async function listarEndereco() {
         }
 
         const data = await response.json();
-        console.log(data);  // Verifica a resposta da API para confirmar o formato
-        preencherTabela(data); // Se a resposta for um array diretamente
+        console.log(data);
+        preencherTabela(data.data);
     } catch (error) {
         console.error("Erro ao buscar os endereços:", error);
     }
 }
 
 function preencherTabela(enderecos) {
-    // Aqui acessamos o tbody da tabela corretamente
+    
     const tabelaBody = document.querySelector("#tabela-enderecos tbody");
 
-    tabelaBody.innerHTML = ""; // Limpa o conteúdo anterior da tabela
+    tabelaBody.innerHTML = "";
 
-    // Verifica se a API retornou um array válido
     if (!Array.isArray(enderecos)) {
         console.error("Formato inesperado da resposta. Esperava-se um array.");
         return;
     }
 
-    // Itera pelos endereços retornados e preenche a tabela
+    
     enderecos.forEach(endereco => {
         const row = document.createElement("tr");
 
@@ -59,17 +58,61 @@ function preencherTabela(enderecos) {
         const complementCell = document.createElement("td");
         complementCell.textContent = endereco.complement;
 
-        // Adiciona as células na linha
+        
+        const actionsCell = document.createElement("td");
+
+
+        const editButton = document.createElement("button");
+        editButton.textContent = "Editar";
+        editButton.onclick = () => editarEndereco(endereco);
+
+    
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Deletar";
+        deleteButton.onclick = () => deletarEndereco(endereco.id);
+
+        
+        actionsCell.appendChild(editButton);
+        actionsCell.appendChild(deleteButton);
+
+        
         row.appendChild(titleCell);
         row.appendChild(cepCell);
         row.appendChild(addressCell);
         row.appendChild(numberCell);
         row.appendChild(complementCell);
+        row.appendChild(actionsCell);
 
-        // Adiciona a linha na tabela dentro do tbody
+
         tabelaBody.appendChild(row);
     });
 }
 
-// Chama a função para listar os endereços
+async function deletarEndereco(id) {
+    let accessToken = localStorage.getItem('accessToken');
+
+    if (!accessToken) {
+        alert("Erro: Usuário não autenticado. Faça o login novamente.");
+        window.location.href = "Login.html";
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://go-wash-api.onrender.com/api/auth/address/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': `Bearer ${accessToken}`,
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Erro ao deletar o endereço");
+        }
+
+        alert("Endereço deletado com sucesso!");
+        listarEndereco();
+    } catch (error) {
+        console.error("Erro ao deletar o endereço:", error);
+    }
+}
 listarEndereco();
