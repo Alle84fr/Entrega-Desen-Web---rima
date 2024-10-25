@@ -1,6 +1,6 @@
 async function listarEndereco() {
-
     let accessToken = localStorage.getItem('accessToken');
+    
     if (!accessToken) {
         alert("Erro: Usuário não autenticado. Faça o login novamente.");
         window.location.href = "Login.html";
@@ -12,7 +12,7 @@ async function listarEndereco() {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${accessToken}`
+                'Authorization': `Bearer ${accessToken}` // O mesmo token usado no curl
             }
         });
 
@@ -21,17 +21,26 @@ async function listarEndereco() {
         }
 
         const data = await response.json();
-        preencherTabela(data);
+        console.log(data);  // Verifica a resposta da API para confirmar o formato
+        preencherTabela(data); // Se a resposta for um array diretamente
     } catch (error) {
         console.error("Erro ao buscar os endereços:", error);
     }
 }
 
 function preencherTabela(enderecos) {
-    const tabela = document.querySelector("#tabela-enderecos");
+    // Aqui acessamos o tbody da tabela corretamente
+    const tabelaBody = document.querySelector("#tabela-enderecos tbody");
 
-    tabela.innerHTML = "";
+    tabelaBody.innerHTML = ""; // Limpa o conteúdo anterior da tabela
 
+    // Verifica se a API retornou um array válido
+    if (!Array.isArray(enderecos)) {
+        console.error("Formato inesperado da resposta. Esperava-se um array.");
+        return;
+    }
+
+    // Itera pelos endereços retornados e preenche a tabela
     enderecos.forEach(endereco => {
         const row = document.createElement("tr");
 
@@ -50,15 +59,15 @@ function preencherTabela(enderecos) {
         const complementCell = document.createElement("td");
         complementCell.textContent = endereco.complement;
 
-        // Adiciona todas as células à linha
+        // Adiciona as células na linha
         row.appendChild(titleCell);
         row.appendChild(cepCell);
         row.appendChild(addressCell);
         row.appendChild(numberCell);
         row.appendChild(complementCell);
 
-        // Adiciona a linha à tabela
-        tabela.appendChild(row);
+        // Adiciona a linha na tabela dentro do tbody
+        tabelaBody.appendChild(row);
     });
 }
 
