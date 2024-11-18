@@ -7,6 +7,7 @@
 
     <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/cadEndereco.css">
+    <script src="../JS/Login.js"></script>
 
     <style>
         table {
@@ -24,13 +25,13 @@
         th {
             background-color: #f2f2f2;
         }
-    </style>
+    </style> 
 </head>
 <body>
     
     <header>
         <h2>Lista de Endereços</h2>
-        <a class="logout" id="logout" href="../HTML/Login.html">Logout </a>
+        <input type="button" class="logout" id="logout" onclick="logOut()" value="Sair"/>
     </header>
 
     <table id="tabela-enderecos">
@@ -48,6 +49,9 @@
         </tbody>
     </table>
 
+   
+
     <script src="../JS/listaEndereco.js"></script>
+    
 </body>
 </html>

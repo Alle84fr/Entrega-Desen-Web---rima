@@ -6,20 +6,8 @@ async function login() {
     let password = document.getElementById('password').value;
 
     
-    /* Check if the email and password fields are empty */
-    if (email === "" || password === "") {
-        alert("Por favor, preencha todos os campos.");
-        return;
-    }
-
-    /* Check if the password is at least 8 characters long */
-    if (password.length < 8) {
-        alert("A senha deve ter no mínimo 8 caracteres.");
-        return;
-    }
-
     try {
-        /* Makes a POST request to the API with the email and password */
+        // Makes a POST request to the API with the email and password 
         let api = await fetch(url, {
             method: "POST",
             body: JSON.stringify({
@@ -33,7 +21,7 @@ async function login() {
         });
 
         if (api.ok) {
-            /* If the request is successful, get the response and log it to the console */
+            // If the request is successful, get the response and log it to the console 
             let resposta = await api.json();
             console.log('Login bem-sucedido!');
             console.log('Token de Acesso:', resposta.access_token);
@@ -50,9 +38,9 @@ async function login() {
             
         }
         
-    let respostaErro = await api.json();
+        let respostaErro = await api.json();
         /* If there are errors in the response, log them to the console */
-    if (respostaErro?.data) {
+        if (respostaErro?.data) {
         alert(respostaErro.data.errors);
     }
     } catch (error) {
@@ -61,3 +49,4 @@ async function login() {
         alert("Ocorreu um erro. Tente novamente mais tarde.");
     }
 }
+

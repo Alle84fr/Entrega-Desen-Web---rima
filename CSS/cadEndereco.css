@@ -58,6 +58,7 @@ h2 {
 }
 
 #tabela-enderecos{
+    position: relative;
     margin-top: 7%;
 }
 .title,
@@ -75,17 +76,18 @@ h2 {
 }
 
 .logout{
+    position: relative;
     background-color: #332c2b;
     color: white;
     border: 1px solid #503935;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    float: right;
     position: absolute;
     right: 15px;
-    top: 10px;
-    margin-bottom: 5px;
+    top: 20px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
 }
 
 @media (max-width: 1200px) {
