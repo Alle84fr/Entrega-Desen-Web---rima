@@ -7,8 +7,10 @@
 
     <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/cadEndereco.css">
+    <link rel="stylesheet" href="../CSS/loader.css">
     <script src="../JS/Login.js"></script>
-
+    <script src="../JS/loader.js"></script>
+    
     <style>
         table {
             width: 100%;
@@ -31,7 +33,9 @@
     
     <header>
         <h2>Lista de Endereços</h2>
-        <input type="button" class="logout" id="logout" onclick="logOut()" value="Sair"/>
+            <a href="cadEnde.html">Seguir</a>
+            <input type="button" class="button" id="button" onclick="logOut()" value="Sair"/>
+        
     </header>
 
     <table id="tabela-enderecos">
@@ -49,7 +53,17 @@
         </tbody>
     </table>
 
-   
+    <div class="cs-loader" id="cs-loader">
+        <div class="cs-loader-inner">
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+        </div>
+    </div>
+
 
     <script src="../JS/listaEndereco.js"></script>
     

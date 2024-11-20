@@ -31,22 +31,23 @@ async function login() {
             localStorage.setItem('accessToken', resposta.access_token);
 
             /* Redirect to the homepage */
-            window.location.href = "../HTML/home.html";
+            window.location.href = "../HTML/listaEndereco.html";
             return;
-
-           
-            
-        }
-        
         let respostaErro = await api.json();
         /* If there are errors in the response, log them to the console */
         if (respostaErro?.data) {
         alert(respostaErro.data.errors);
-    }
-    } catch (error) {
+        }
+    } 
+} catch (error) {
         /* If there is an error making the request, log it to the console */
         console.error("Erro na requisi o:", error);
         alert("Ocorreu um erro. Tente novamente mais tarde.");
     }
 }
+   
 
+function logOut() {
+    localStorage.removeItem("accessToken");
+    window.localStorage.href="../HTML/Login.html"
+}

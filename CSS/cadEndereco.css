@@ -51,10 +51,11 @@ header {
 
 /*selec*/
 
-h2 {
+.h1 {
     font-family: "Lacquer", system-ui;
-    font-size: 1.5em;
+    font-size: 0.7em;
     margin-bottom: 0;
+    margin-right: 1100px;
 }
 
 #tabela-enderecos{
@@ -75,7 +76,7 @@ h2 {
    
 }
 
-.logout{
+.button{
     position: relative;
     background-color: #332c2b;
     color: white;
@@ -85,6 +86,22 @@ h2 {
     text-decoration: none;
     position: absolute;
     right: 15px;
+    top: 20px;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+a{
+    position: relative;
+    background-color: #332c2b;
+    color: white;
+    border: 1px solid #503935;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    right: 100px;
     top: 20px;
     margin-bottom: 10px;
     padding: 10px 20px;

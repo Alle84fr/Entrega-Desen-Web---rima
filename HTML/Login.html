@@ -7,8 +7,9 @@
         <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
         <title>Login</title>
         <link rel="stylesheet" href="../CSS/Login.css">
+        <link rel="stylesheet" href="../CSS/loader.css">
         <script src="../JS/Login.js"></script>
-
+        <script src="../JS/loader.js"></script>
     </head>
 
     <body>
@@ -42,7 +43,7 @@
                 
                     <div class="outter">
                         <div class="inner">
-                            <input type="button" value="salvar" onclick="login()" class="button"/>
+                            <input type="button" value="salvar" onclick="login()" class="button" id="button"/>
                         </div>
                         <div class="inner">
                             <button class="mano" value="reset" type="reset"><a href="cadastro.html">Não tem uma conta? crie já</a></button>
@@ -50,14 +51,17 @@
                     </div>
             </form>
         </div>
-
-
-
-
-
-        <!--caminho tentativa-->
-       
-
+    
+        <div class="cs-loader" id="cs-loader">
+            <div class="cs-loader-inner">
+              <label>●</label>
+              <label>●</label>
+              <label>●</label>
+              <label>●</label>
+              <label>●</label>
+              <label>●</label>
+            </div>
+        </div>
 
     </body>
 </html>
