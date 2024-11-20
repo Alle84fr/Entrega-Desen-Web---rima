@@ -49,5 +49,5 @@ async function login() {
 
 function logOut() {
     localStorage.removeItem("accessToken");
-    window.localStorage.href="../HTML/Login.html"
+    window.location.href="../HTML/Login.html";
 }
