@@ -122,8 +122,7 @@ async function deletarEndereco(id) {
 
 async function editarEndereco(endereco) {
     localStorage.setItem('editarEndereco', JSON.stringify(endereco));
-    window.location.href="../HTML/updateEnde.html"
-    
+    window.location.href="../HTML/updateEnde.html"    
 }
 
 listarEndereco();
