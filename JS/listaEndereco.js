@@ -64,13 +64,18 @@ function preencherTabela(enderecos) {
 
         const editButton = document.createElement("button");
         editButton.textContent = "Editar";
-        editButton.onclick = () => editarEndereco(endereco);
-
+        editButton.onclick = () => { 
+            const enderecoEditar = endereco;
+            localStorage.setItem("editarEndereco", JSON.stringify(endereco));
+            window.location.href = "../HTML/updateEnde.html";
+        editButton.classList.add("salv");
+ 
+        }
     
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Deletar";
         deleteButton.onclick = () => deletarEndereco(endereco.id);
-
+        deleteButton.classList.add("delt");
         
         actionsCell.appendChild(editButton);
         actionsCell.appendChild(deleteButton);
@@ -82,7 +87,6 @@ function preencherTabela(enderecos) {
         row.appendChild(numberCell);
         row.appendChild(complementCell);
         row.appendChild(actionsCell);
-
 
         tabelaBody.appendChild(row);
     });
@@ -115,5 +119,12 @@ async function deletarEndereco(id) {
         console.error("Erro ao deletar o endereço:", error);
     }
 }
+
+async function editarEndereco(endereco) {
+    localStorage.setItem('editarEndereco', JSON.stringify(endereco));
+    window.location.href="../HTML/updateEnde.html"
+    
+}
+
 listarEndereco();
 
