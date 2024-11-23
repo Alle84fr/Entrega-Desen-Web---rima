@@ -20,8 +20,8 @@
     </header>
 
     <div class="main">
-        <h2>Cadastro Endereço</h2>
-        <form action="" name="Formulario" method="post">
+        <h2>Atualizar Endereço</h2>
+        <form action="" name="Formulario" method="PUT">
             <label for="title">Tipo de Local: </label>
             <select name="title" id="title" class="title" required>
                 <option value="">Selecione o tipo</option>
@@ -44,8 +44,7 @@
 
             <div id="outer">
                 <div class="inner">
-                    <!-- Altere a chamada da função aqui para 'salvarEndereco' -->
-                    <input type="button" value="salvar" onclick="salvarEndereco()" class="button" id="button" />
+                    <input type="button" value="salvar" onclick="atualizar()" class="button" id="button" />
                 </div>
             </div>
         </form>
