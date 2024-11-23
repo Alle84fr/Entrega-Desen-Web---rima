@@ -21,7 +21,7 @@ async function atualizar() {
     const id = enderecoEditar.id;
     const accessToken = localStorage.getItem('accessToken');
 
-    // Campos do formulário
+    
     const titulo = document.getElementById('title').value;
     const cep = document.getElementById('cep').value;
     const endereco = document.getElementById('address').value;
